@@ -1,19 +1,8 @@
 import {NEWLOGIN,LOGOUT } from '../actions/actionType';
-import {
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut,
-    onAuthStateChanged,
-    
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
-// function login(user){
-//     return{
-//         type: LOGIN,
-//         payload: user
-//     }
-// }
+ 
 
 function setUser(userval){
     return{
@@ -21,15 +10,14 @@ function setUser(userval){
         payload: userval
     }
 }
-function logOut(){
-    return signOut(auth);
+function onSignOut(){
+    return{
+        type: LOGOUT
+    }
 }
 
-function signUp(displayName,email,password){
-    return createUserWithEmailAndPassword(auth,displayName,email,password);
-}
-function logIn(email,password){
-    return signInWithEmailAndPassword(auth,email,password);
+function signUp(email,password){
+    return createUserWithEmailAndPassword(auth,email,password);
 }
 
-export {logIn,signUp,setUser,logOut};
+export {signUp,setUser,onSignOut};

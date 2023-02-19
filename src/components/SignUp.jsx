@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import { signUp } from '../redux/actions/actionCreator';
-
+ 
 const SignUp = () => {
+  // eslint-disable-next-line
   const [displayName,setDisplayName] = useState("");
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
@@ -12,7 +13,7 @@ const SignUp = () => {
   const handleSubmit = async()=>{
     setError("");
     try{
-      await signUp(displayName,email,password);
+      await signUp(email,password);
       navigate("/");
     }catch (err) {
       setError(err.message);

@@ -9,7 +9,7 @@ const userReducer = (state=initialState,action) => {
     {
         case NEWLOGIN:
             return{
-                ...state,
+                ...state, 
                 user: action.payload
             }
         

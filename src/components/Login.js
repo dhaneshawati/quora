@@ -4,26 +4,60 @@ import COVER_IMAGE from '../Assets/Water.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import { useEffect } from 'react';
-import { logIn } from '../redux/actions/actionCreator';
-
+import { useDispatch } from 'react-redux';
+import { setUser } from '../redux/actions/actionCreator';
+import { useSelector } from 'react-redux';
+import { onAuthStateChanged } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+ 
 const Login = () => {
   const mailRef = useRef();
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [error,setError] = useState("");
+  const [data,setData] = useState("");
+
   const navigate = useNavigate();
+  const user = useSelector((state)=>state.user);
+  const dispatch = useDispatch();
+
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
 
   useEffect(()=>{
     mailRef.current.focus();
   },[])
  
+  useEffect(()=>{
+    const unsubscibe = onAuthStateChanged(auth, (currentUser)=>{
+       dispatch(setUser(currentUser));
+       console.log("Inside Login",user);
+       
+     })
+ 
+     return unsubscibe();
+     
+   },[data])
 
   const handleSubmit = async()=>{
     setError("");
     try{
-      await logIn(email,password);
+      await signInWithEmailAndPassword(auth,email,password);
+      dispatch(setUser({email:email}));
       navigate("/home");
+
     }catch (err) {
+      setError(err.message);
+    }
+  }
+  const handleGoogleSignIn = async() => {
+    try{
+      await signInWithPopup(auth,provider);
+      setData(email);
+      console.log(user);
+      navigate("/home");
+      console.log("Google");
+    } catch (err) {
       setError(err.message);
     }
   }
@@ -85,7 +119,7 @@ const Login = () => {
           </div>
 
           <div className="w-full my-4 flex items-center justify-center">
-            <GoogleButton/>
+            <GoogleButton onClick={handleGoogleSignIn}/>
           </div>
 
         </div>

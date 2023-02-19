@@ -1,36 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../styles/Home.css'
 import Quora from '../components/Quora'
 import { useEffect } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase';
-import { setUser } from '../redux/actions/actionCreator';
+import { getAuth, signOut } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
-import { logOut } from '../redux/actions/actionCreator';
-import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import { onSignOut } from '../redux/actions/actionCreator';
+ 
 const Home = () => {
+  const auth = getAuth();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const user = useSelector(state => state.user);
 
   useEffect(()=>{
-   const unsubscibe = onAuthStateChanged(auth, (currentUser)=>{
-      dispatch(setUser(currentUser));
-    })
-
-    return unsubscibe();
+    console.log(user);
   },[])
 
   const handleLogOut = async()=>{
     try{
       console.log("Inside Home")
-      await logOut();
+      await signOut(auth)
       console.log("Home Logout")
+      dispatch(onSignOut());
       console.log(user);
-      navigate("/");
-
+      
     }catch (err) {
       console.log(err.message);
     }
