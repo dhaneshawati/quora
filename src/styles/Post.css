@@ -1,0 +1,78 @@
+:root{
+    --color: gray;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    border: 1px soild lightgray;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.post_info{
+    display: flex;
+    align-items: center;
+}
+.post_info .right{
+   margin-left: auto;
+}
+.post_info .right .MuiSvgIcon-root{
+    margin-right: 10px;
+    cursor: pointer;
+ }
+.post_info h5{
+    margin-left: 10px;
+    font-size: 13px;
+}
+.post_info h5:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.post_body{
+    display: flex;
+    flex-direction: column;
+}
+.post_body .post_question{
+    display: flex;
+  margin-top: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.post_body .post_question p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.post_body img{
+    object-fit: contain;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.post_question .post_btnAnswer{
+    margin-left: auto;
+    outline: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+.post_question .post_btnAnswer:hover{
+    background-color: rgb(58, 58, 247);
+    cursor: pointer;
+}
+.post_footer{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.post_footer .MuiSvgIcon-root{
+    color: var(--color);
+    margin-right: 40px;
+    cursor: pointer;
+}
+.post_footer .MuiSvgIcon-root:active{
+    color: dodgerblue;
+}

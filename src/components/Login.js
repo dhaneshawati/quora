@@ -1,29 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import GoogleButton from 'react-google-button';
 import COVER_IMAGE from '../Assets/Water.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import { logIn } from '../redux/actions/actionCreator';
 
 const Login = () => {
   const mailRef = useRef();
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [error,setError] = useState("");
+  const navigate = useNavigate();
+
   useEffect(()=>{
     mailRef.current.focus();
   },[])
+ 
+
+  const handleSubmit = async()=>{
+    setError("");
+    try{
+      await logIn(email,password);
+      navigate("/home");
+    }catch (err) {
+      setError(err.message);
+    }
+  }
   return (
     <div className='container'>
-    <div className='max-w-[800px] max-h-[550px] m-auto'>
-     <div className="absolute max-w-[800px] max-h-[550px] flex items-center">
-      <div className="relative w-1/2 max-h-[550px] flex flex-col mt-8 ml-32">
+    <div className='w-[800px] h-[550px] m-auto'>
+     <div className="absolute w-[800px] h-[550px] flex items-center">
+      <div className="relative w-1/2 h-full flex flex-col mt-8 ml-32 shadow">
         <div className="absolute top-[20%] left-[10%] flex flex-col ">
         <img className='h-[35%] w-[45%] ml-16' src="https://download.logo.wine/logo/Quora/Quora-Logo.wine.png" alt="Quora" />
           <h4 className='text-2xl text-white font-extrabold m-auto mr-10'>A place to share knowledge and better understand the world</h4>
         </div>
-        <img src={COVER_IMAGE} alt="poster" className="max-h-[550px] object-cover border-red rounded-md" />
+        <img src={COVER_IMAGE} alt="poster" className="h-[550px] object-cover border-red rounded-md" />
       </div>
 
-      <div className="w-1/2 max-h-[550px] bg-[#f5f5f5] flex flex-col p-10 justify-between mt-8 rounded-md">
-        <p className='mb-4 text-[#FF0000]'>Error Message</p>
+      <div className="w-1/2 h-full  bg-[#f5f5f5] flex flex-col p-10 justify-between mt-8 rounded-md">
+        <p className='mb-4 text-[#FF0000]'>{error}</p>
 
 
         <div className="w-full flex flex-col  mx-auto">
@@ -37,11 +54,13 @@ const Login = () => {
             <input type="email" 
             className="w-full text-black p-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
             placeholder='Email'
-            ref={mailRef} />
+            ref={mailRef}
+            onChange={(e)=>setEmail(e.target.value)} />
 
             <input type="password" 
             className="w-full text-black p-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
-            placeholder='Password' />
+            placeholder='Password'
+            onChange={(e)=>setPassword(e.target.value)} />
 
           </div>
 
@@ -54,7 +73,7 @@ const Login = () => {
 
           <div className="w-full flex flex-col my-4 items-center">
 
-            <button className="w-1/2 text-white my-2 bg-[#060606] rounded-md p-4 text-center flex items-center justify-center hover:bg-slate-600">
+            <button className="w-1/2 text-white my-2 bg-[#060606] rounded-md p-4 text-center flex items-center justify-center hover:bg-slate-600" onClick={handleSubmit}>
               Log in
             </button>
 

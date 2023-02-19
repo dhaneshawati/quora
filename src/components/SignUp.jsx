@@ -1,7 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link,useNavigate } from 'react-router-dom'
+import { signUp } from '../redux/actions/actionCreator';
 
 const SignUp = () => {
+  const [displayName,setDisplayName] = useState("");
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [error,setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async()=>{
+    setError("");
+    try{
+      await signUp(displayName,email,password);
+      navigate("/");
+    }catch (err) {
+      setError(err.message);
+    }
+  }
+
   return (
     <div className='container'>
     <div className='w-[400px] max-h-[600px] m-auto'>
@@ -12,6 +29,7 @@ const SignUp = () => {
         <div className="w-full flex flex-col  mx-auto">
 
           <div className="w-full flex flex-col mb-2">
+            <p className='mb-4 text-[#FF0000]'>{error}</p>
             <h3 className="text-3xl font-serif font-semibold mb-2">Sign Up</h3>
             <p className="text-base mb-2">Please enter your details.</p>
           </div>
@@ -19,21 +37,21 @@ const SignUp = () => {
           <div className="w-full flex flex-col ">
           <input type="text" 
             className="w-full text-black p-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
-            placeholder='Username' />
+            placeholder='Username' onChange={(e)=>setDisplayName(e.target.value)} />
 
             <input type="email" 
             className="w-full text-black p-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
-            placeholder='Email' />
+            placeholder='Email' onChange={(e)=>setEmail(e.target.value)} />
 
             <input type="password" 
             className="w-full text-black p-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
-            placeholder='Set Password' />
+            placeholder='Set Password'onChange={(e)=>setPassword(e.target.value)} />
 
           </div>
 
           <div className="w-full flex flex-col my-4 items-center">
 
-            <button className="w-1/2 text-white my-2 bg-[#060606] rounded-md p-4 text-center flex items-center justify-center hover:bg-slate-600">
+            <button className="w-1/2 text-white my-2 bg-[#060606] rounded-md p-4 text-center flex items-center justify-center hover:bg-slate-600" onClick={handleSubmit}>
               Sign up
             </button>
 
