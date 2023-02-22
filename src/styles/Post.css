@@ -1,7 +1,5 @@
-:root{
-    --color: gray;
-}
-.post{
+
+.post{ 
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -10,9 +8,17 @@
     border-radius: 5px;
     margin-top: 10px;
 }
+/* .post:hover{
+    border: 1px solid gray;
+    cursor: pointer;
+} */
 .post_info{
     display: flex;
     align-items: center;
+}
+.post_info small{
+    font-weight: bold;
+    margin-left: 20px;
 }
 .post_info .right{
    margin-left: auto;
@@ -68,8 +74,20 @@
     align-items: center;
     margin-top: 10px;
 }
+.post_footer .post_footerAction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post_footer .post_footerAction p{
+    color: black;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: -30px;
+    
+}
 .post_footer .MuiSvgIcon-root{
-    color: var(--color);
+    color: gray;
     margin-right: 40px;
     cursor: pointer;
 }

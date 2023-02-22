@@ -5,16 +5,16 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Widget from './Widget'
 
-const Quora = ({handleLogOut}) => {
+const Quora = () => {
   return (
     <div className='quora'>
-      <Navbar handleLogOut={handleLogOut}/>
+      <Navbar />
       <div className="quora_content">
       <Sidebar />
       <Feed/>
       <Widget/>
       </div>
-
+ 
       
     </div>
   )

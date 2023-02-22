@@ -9,24 +9,46 @@ import SearchIcon from '@mui/icons-material/Search'
 import LanguageIcon from '@mui/icons-material/Language'
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 import '../styles/Navbar.css'
-import { logOut } from '../redux/actions/actionCreator';
-// import { auth } from "../../firebase";
-// import {signOut} from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+import { useEffect,useState } from 'react';
+import { getAuth, signOut } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { onSignOut } from '../redux/actions/actionCreator';
+import { useAuth } from '../firebase';
 
-const Navbar = ({handleLogOut}) => {
-  // const handleSubmit = async ()=>{
-  //   console.log("LOGOUT");
-  //   try{
-  //     await logOut();
-  //     console.log("LOGOUT");
-  //   }catch (err) {
-  //     console.log(err.message);
-  //   }
-  // }
-// function handleOut(){
-//   console.log("LOGOUT");
-  
-// }
+const Navbar = () => {
+  const currentUser = useAuth();
+  const[photoURL,setPhotoURL] = useState("https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg");
+  const auth = getAuth();
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.user);
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(currentUser && currentUser.photoURL){
+        
+        setPhotoURL(currentUser.photoURL)
+    }
+},[currentUser])
+
+  const handleLogOut = async()=>{
+    try{
+      console.log("Inside Navbar")
+      await signOut(auth)
+      console.log("Home Logout")
+      dispatch(onSignOut());
+      navigate("/");
+      console.log(user);
+      
+    }catch (err) {
+      console.log(err.message);
+    }
+  }
+
+  function handleQuestion(){
+    navigate("/home/questions");
+  }
   return (
     <div className='navbar'>
       <div className="qHeader_logo">
@@ -57,10 +79,10 @@ const Navbar = ({handleLogOut}) => {
       </div>
       <div className="qHeader_Rem">
         <div className="qHeader_avatar">
-        <Avatar/>
+        <Avatar src={photoURL}/>
         </div>
         <LanguageIcon />
-        <Button>Add Question</Button>
+        <Button onClick={handleQuestion}>Add Question</Button>
         <div className="qHeader_icon">
            <div><PowerSettingsNewOutlinedIcon onClick={()=>handleLogOut()} /></div> 
         </div>

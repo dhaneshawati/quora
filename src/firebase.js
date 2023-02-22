@@ -1,5 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore } from "firebase/firestore";
+import { useState, useEffect } from "react";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDY13lOm7brLfdgQYYXwnVAz52lyIaD23Y",
@@ -14,4 +17,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
+
+//custom Hook
+
+export function useAuth(){
+  const[currentUser,setCurrentUser] = useState();
+  useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(auth, (user)=>setCurrentUser(user));
+    return unsubscribe
+  },[])
+  return currentUser;
+}
+
 export default app;

@@ -1,0 +1,20 @@
+.sideOptions{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.side_content{
+    margin: 5px;
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+}
+.side_content img{
+    height: 40px;
+    border-radius: 5px;
+}
+.side_content h5{
+    color: blue;
+    text-decoration: underline;
+   margin-left: 20px;
+}

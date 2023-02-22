@@ -1,0 +1,23 @@
+.side{
+    display: flex;
+    flex: 0.2;
+    flex-direction: column;
+    margin-left: 70px;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    max-height: 85vh;
+    background-color: white;
+}
+.side_header{
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+ 
+}
+.side_header h5{
+    padding: 10px;
+    color: rgb(80,80,80);
+    font-size: 15px;
+}

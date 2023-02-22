@@ -1,0 +1,128 @@
+
+.question{
+    display: flex;
+    flex-direction: column;
+    flex: 0.6;
+    justify-content: center;
+    background-color: white;
+    border: 1px soild lightgray;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.question_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(187, 187, 187, 0.5);
+    padding: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .question_title > h5 {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 30px;
+  }
+  
+  .question_title > h5:hover {
+    color: #b92b27;
+  }
+  
+  .question_info {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  
+  .question_info > p {
+    margin-left: 10px;
+    font-size: small;
+    color: gray;
+    padding: 5px;
+  }
+  
+  .question_info > .question_scope {
+    display: flex;
+    align-items: center;
+    color: rgb(98, 98, 98);
+    padding: 5px;
+    margin-left: 10px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 33px;
+    cursor: pointer;
+  }
+  
+  .question_field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    flex: 1;
+    margin-left: 20px;
+    
+  }
+  
+   .input{
+    padding-left: 10px;
+
+  }
+  .question_field > .question_fieldLink {
+    color: gray;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .question_field > .question_fieldLink > input {
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    
+  }
+  
+  .question_btns {
+    display: flex;
+    align-items: center;
+    margin-top: 260px;
+    /* margin-right: -20px; */
+    border-top: 1px solid lightgray;
+    justify-content: flex-end;
+    /* justify-content: center; */
+  }
+
+.question_btns .question_Cancelbtn{
+    /* margin-left: auto; */
+    outline: none;
+    border: none;
+    background-color: #8f1f1b;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.question_btns .question_Cancelbtn:hover{
+    background-color: #c04d49;
+    cursor: pointer;
+}
+.question_btns .question_Addbtn{
+    margin-left: 20px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.question_btns .question_Addbtn:hover{
+    background-color: rgb(58, 58, 247);
+    cursor: pointer;
+}

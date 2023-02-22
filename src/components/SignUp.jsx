@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import { signUp } from '../redux/actions/actionCreator';
- 
+import { useRef } from 'react'; 
+
 const SignUp = () => {
   // eslint-disable-next-line
   const [displayName,setDisplayName] = useState("");
@@ -9,7 +10,12 @@ const SignUp = () => {
   const [password,setPassword] = useState("");
   const [error,setError] = useState("");
   const navigate = useNavigate();
+  const nameRef = useRef();
 
+  useEffect(()=>{
+    nameRef.current.focus();
+  },[])
+  
   const handleSubmit = async()=>{
     setError("");
     try{
@@ -38,7 +44,7 @@ const SignUp = () => {
           <div className="w-full flex flex-col ">
           <input type="text" 
             className="w-full text-black p-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
-            placeholder='Username' onChange={(e)=>setDisplayName(e.target.value)} />
+            placeholder='Username' ref={nameRef} onChange={(e)=>setDisplayName(e.target.value)} />
 
             <input type="email" 
             className="w-full text-black p-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"

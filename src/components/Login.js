@@ -6,45 +6,40 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/actions/actionCreator';
-import { useSelector } from 'react-redux';
-import { onAuthStateChanged } from 'firebase/auth';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
- 
+import { useAuth } from '../firebase';
+
 const Login = () => {
   const mailRef = useRef();
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [error,setError] = useState("");
-  const [data,setData] = useState("");
 
   const navigate = useNavigate();
-  const user = useSelector((state)=>state.user);
+  const currentUser = useAuth();
+  
   const dispatch = useDispatch();
 
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-
+ 
   useEffect(()=>{
     mailRef.current.focus();
   },[])
  
   useEffect(()=>{
-    const unsubscibe = onAuthStateChanged(auth, (currentUser)=>{
-       dispatch(setUser(currentUser));
-       console.log("Inside Login",user);
-       
-     })
- 
-     return unsubscibe();
+
+    if(currentUser){
+      dispatch(setUser(currentUser));
+      navigate("/home");
+    }
      
-   },[data])
+   },[currentUser])
 
   const handleSubmit = async()=>{
     setError("");
     try{
       await signInWithEmailAndPassword(auth,email,password);
-      dispatch(setUser({email:email}));
-      navigate("/home");
 
     }catch (err) {
       setError(err.message);
@@ -53,18 +48,14 @@ const Login = () => {
   const handleGoogleSignIn = async() => {
     try{
       await signInWithPopup(auth,provider);
-      setData(email);
-      console.log(user);
-      navigate("/home");
-      console.log("Google");
     } catch (err) {
       setError(err.message);
     }
   }
   return (
-    <div className='container'>
+    <div className='contain'>
     <div className='w-[800px] h-[550px] m-auto'>
-     <div className="absolute w-[800px] h-[550px] flex items-center">
+     <div className="absolute w-[800px] h-[550px] flex  m-auto">
       <div className="relative w-1/2 h-full flex flex-col mt-8 ml-32 shadow">
         <div className="absolute top-[20%] left-[10%] flex flex-col ">
         <img className='h-[35%] w-[45%] ml-16' src="https://download.logo.wine/logo/Quora/Quora-Logo.wine.png" alt="Quora" />
