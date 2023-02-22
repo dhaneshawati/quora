@@ -1,0 +1,8 @@
+.ans_container{
+    background-color: rgb(241,241,241);
+}
+.ans_container .ans_container_content{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+} 

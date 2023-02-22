@@ -9,9 +9,11 @@ import { db } from '../firebase';
 import { useAuth } from '../firebase';
 
 const Question = () => {
-  const user = useSelector((state)=>state.user);
+  const user = useSelector((state)=>state.userInfo.user);
   const navigate = useNavigate();
+  
   const currentUser = useAuth();
+  const [userName,setUserName] = useState("");
   const [photoURL,setPhotoURL] = useState("https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg");
   const [question,setQuestion] = useState("");
   const [inputURL,setInputURL] = useState("");
@@ -24,7 +26,12 @@ const Question = () => {
         
         setPhotoURL(currentUser.photoURL)
     }
+    if(currentUser && currentUser.displayName){
+      setUserName(currentUser.displayName);
+    }
+    
 },[currentUser])
+
 
   function handleCancel(){
     navigate("/home");
@@ -61,7 +68,7 @@ const Question = () => {
         </div>
           <div className="question_info">
               <Avatar className='avatar' src={photoURL} />
-              <p>{user.displayName ? user.displayName : user.email} asked </p>
+              <p>{userName ? userName : user.email} asked </p>
               <div className="question_scope">
                   <PeopleAltOutlined />
                   <p>Public</p>

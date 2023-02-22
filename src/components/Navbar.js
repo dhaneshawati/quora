@@ -22,7 +22,7 @@ const Navbar = () => {
   const[photoURL,setPhotoURL] = useState("https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg");
   const auth = getAuth();
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
+  const user = useSelector(state => state.userInfo.user); 
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -49,6 +49,9 @@ const Navbar = () => {
   function handleQuestion(){
     navigate("/home/questions");
   }
+  function handleAnswer(){
+    navigate("/home/answers");
+  }
   return (
     <div className='navbar'>
       <div className="qHeader_logo">
@@ -60,7 +63,7 @@ const Navbar = () => {
         <HomeIcon />
         </div>
         <div className="qHeader_icon">
-            <FeaturedPlayListOutlinedIcon />
+            <FeaturedPlayListOutlinedIcon  onClick={handleAnswer}/>
         </div>
         <div className="qHeader_icon">
             <AssignmentTurnedInOutlinedIcon />

@@ -1,4 +1,4 @@
-import {NEWLOGIN,LOGOUT } from '../actions/actionType';
+import {NEWLOGIN,LOGOUT,QUESTION } from '../actions/actionType';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
@@ -20,4 +20,11 @@ function signUp(email,password){
     return createUserWithEmailAndPassword(auth,email,password);
 }
 
-export {signUp,setUser,onSignOut};
+function setQuestionInfo(info){
+    return{
+        type: QUESTION,
+        payload: info
+    }
+}
+
+export {signUp,setUser,onSignOut,setQuestionInfo};

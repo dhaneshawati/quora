@@ -1,0 +1,96 @@
+
+.answer{
+    display: flex;
+    flex-direction: column;
+    flex: 0.6;
+    justify-content: center;
+    background-color: white;
+    border: 1px soild lightgray;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.answer_title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  
+  .answer_title > h1 {
+    color: #8f1f1b;
+    font-weight: 600;
+    font-size: larger;
+    margin-bottom: 10px;
+  }
+  
+  .answer_title > p {
+    color: gray;
+    font-size: medium;
+  }
+  
+  .answer_title > p > .name {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .answer_body {
+    display: flex;
+    padding-top: 20px;
+    flex: 1;
+    margin-top: 1rem;
+    /* border: 1px solid black; */
+  }
+  
+  .answer_body > textarea {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+    margin: auto;
+    font-size: 15px;
+    color: blue;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  
+  .question_btns {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    /* margin-right: -20px; */
+    border-top: 1px solid lightgray;
+    justify-content: flex-end;
+    /* justify-content: center; */
+  }
+
+.question_btns .question_Cancelbtn{
+    /* margin-left: auto; */
+    outline: none;
+    border: none;
+    background-color: #8f1f1b;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.question_btns .question_Cancelbtn:hover{
+    background-color: #c04d49;
+    cursor: pointer;
+}
+.question_btns .question_Addbtn{
+    margin-left: 20px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.question_btns .question_Addbtn:hover{
+    background-color: rgb(58, 58, 247);
+    cursor: pointer;
+}
