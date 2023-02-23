@@ -91,7 +91,7 @@ const Post = ({ id,image,questionProp,timestamp,qAskedBy,profileURL }) => {
                 }
                 <p></p>
             </div>
-            <img src={image} alt="post" />
+            {image?<img src={image} alt="post" />:""};
         </div>
         <div className="post_footer">
             <div className="post_footerAction">
