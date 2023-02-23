@@ -18,7 +18,7 @@ const Question = () => {
   const [question,setQuestion] = useState("");
   const [inputURL,setInputURL] = useState("");
   
-  const blank_Post = "https://upload.wikimedia.org/wikipedia/commons/e/eb/Blank.jpg";
+  const blank_Post = "";
 
   useEffect(()=>{
     if(currentUser && currentUser.photoURL){
