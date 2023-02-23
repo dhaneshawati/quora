@@ -14,12 +14,11 @@ import { setQuestionInfo } from "../redux/actions/actionCreator";
 import QuestionDataService from "../services/questionServices";
 import { doc } from 'firebase/firestore'
 import { db } from '../firebase'
-// import { useSelector } from 'react-redux';
+
 
 
 const Post = ({ id,image,questionProp,timestamp,qAskedBy,profileURL }) => {
     
-    // const user = useSelector((state)=>state.user);
     const [upvote,setUpvote] = useState(100);
     const [downvote,setDownvote] = useState(2);
     const navigate = useNavigate();
@@ -34,7 +33,7 @@ const Post = ({ id,image,questionProp,timestamp,qAskedBy,profileURL }) => {
   
     const getAnswers = async (ansRef) => {
       const data = await QuestionDataService.getAllAnswers(ansRef)
-      console.log(data.docs);
+    //   console.log(data.docs);
       setAnswers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
     };
 
@@ -80,11 +79,13 @@ const Post = ({ id,image,questionProp,timestamp,qAskedBy,profileURL }) => {
                 {
                     answers.map((doc,id)=>{
                         return(
-                        <div key={doc?.id}>{doc?.answer}
-                        <p>
-                            <span>{doc?.user}</span>
-                            <span>{new Date(doc.timestamp?.toDate()).toLocaleString()}</span>
-                        </p>
+                        <div key={doc?.id} className="flex flex-col">
+                            
+                            <p className='mb-4 text-justify'>
+                                <span className='font-serif text-justify'>{doc?.answer}</span> 
+                                <span className='mr-4 font-medium ml-8'>Answered by: {doc?.user}</span>
+                                <span className='font-medium'>on - {new Date(doc.timestamp?.toDate()).toLocaleString()}</span>
+                            </p>
                         </div>)
                     })
                 }

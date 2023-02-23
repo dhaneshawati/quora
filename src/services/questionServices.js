@@ -1,8 +1,7 @@
 import { db } from "../firebase";
-import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import { collection, getDocs, doc } from "firebase/firestore";
 
 const questionCollectionRef = collection(db, "questions");
-// const answerCollectionRef = collection(db, "questions");
 
 class QuestionDataService {
     getAllQuestions = () => {

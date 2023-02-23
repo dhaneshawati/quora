@@ -4,7 +4,6 @@ import Home from './components/Home';
 import Login from './components/Login';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import SignUp from './components/SignUp';
-// import Container from './components/Container';
 import Qpage from './components/Qpage';
 import AnsPage from './components/AnsPage';
 

@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="main">
       <Quora />
-      {console.log(user)}
+      {/* {console.log(user)} */}
     </div>
   )
 } 

@@ -34,9 +34,9 @@ const Navbar = () => {
 
   const handleLogOut = async()=>{
     try{
-      console.log("Inside Navbar")
+      // console.log("Inside Navbar")
       await signOut(auth)
-      console.log("Home Logout")
+  
       dispatch(onSignOut());
       navigate("/");
       console.log(user);
@@ -60,7 +60,7 @@ const Navbar = () => {
       </div>
       <div className="qHeader_icons">
         <div className="qHeader_icon">
-        <HomeIcon />
+        <HomeIcon onClick={()=>navigate("/home")}/>
         </div>
         <div className="qHeader_icon">
             <FeaturedPlayListOutlinedIcon  onClick={handleAnswer}/>

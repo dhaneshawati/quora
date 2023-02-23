@@ -18,7 +18,6 @@ const Question = () => {
   const [question,setQuestion] = useState("");
   const [inputURL,setInputURL] = useState("");
   
-  // const url = "https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg";
   const blank_Post = "https://upload.wikimedia.org/wikipedia/commons/e/eb/Blank.jpg";
 
   useEffect(()=>{

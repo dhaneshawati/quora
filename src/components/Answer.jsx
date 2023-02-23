@@ -2,23 +2,19 @@ import React from 'react'
 import '../styles/Answer.css';
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { addDoc, collection, doc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const Answer = () => {
     const textRef = useRef();
     const [answer,setAnswer] = useState("");
     const navigate = useNavigate();
-    // const dispatch = useDispatch();
     const questionId = useSelector((state)=>state.questionInfo.questionId);
     const question = useSelector((state)=>state.questionInfo.questionName);
     const timestamp = useSelector((state)=>state.questionInfo.timestamp);
     const questionAskedBy = useSelector((state)=>state.questionInfo.qSeeker);
     const user = useSelector((state)=>state.userInfo.user);
-    // const [values, loading, error, snapshot] = useCollectionData(query);
 
     useEffect(()=>{
         textRef.current.focus();
@@ -33,7 +29,7 @@ const Answer = () => {
         console.log(questionAskedBy);
         if(answer)
         {
-            console.log(answer);
+            // console.log(answer);
             const docRef = doc(db,`questions/${questionId}`);
             await addDoc(collection(docRef,"answers"),{
                 answer: answer,
