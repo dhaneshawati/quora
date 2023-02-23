@@ -6,6 +6,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import SignUp from './components/SignUp';
 import Qpage from './components/Qpage';
 import AnsPage from './components/AnsPage';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/home' element={<ProtectedRoutes><Home/></ProtectedRoutes>} />
         <Route path='/home/questions' exact element={<Qpage/>} />
         <Route path='/home/answers' exact element={<AnsPage />} />
+        <Route path='*' element={<PageNotFound />} />
      </Routes>
     </div>
   );

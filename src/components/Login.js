@@ -100,7 +100,7 @@ const Login = () => {
 
             <button className="w-1/2 text-white my-2 bg-[#060606] rounded-md p-4 text-center flex items-center justify-center hover:bg-slate-600" onClick={handleSubmit}>
               Log in
-            </button>
+            </button> 
 
           </div>
 
