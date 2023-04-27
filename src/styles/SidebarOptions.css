@@ -18,6 +18,7 @@
     height: 30px;
     margin-left: 20px;
     border-radius: 5px;
+    width: 2rem;
 }
 .sidebarOption p{
    color: rgb(85, 85, 85);

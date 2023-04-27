@@ -28,7 +28,7 @@ const Answer = () => {
         console.log(user);
         console.log(questionAskedBy);
         if(answer)
-        {
+        { 
             // console.log(answer);
             const docRef = doc(db,`questions/${questionId}`);
             await addDoc(collection(docRef,"answers"),{
