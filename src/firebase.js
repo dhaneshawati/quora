@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { useState, useEffect } from "react";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBEievkjh1nUI3JduukXm_L_EghWe-axzw",
-  authDomain: "quora-clone-9e5f5.firebaseapp.com",
-  projectId: "quora-clone-9e5f5",
-  storageBucket: "quora-clone-9e5f5.appspot.com",
-  messagingSenderId: "34157297077",
-  appId: "1:34157297077:web:52f41a7b55741255e52dfc",
-  measurementId: "G-0KY3WT7GEZ",
+  apiKey: "AIzaSyAIVGeFLFfN-5ohsDXUcuFykwGpc4QjR8o",
+  authDomain: "quora-clone-new-1249c.firebaseapp.com",
+  projectId: "quora-clone-new-1249c",
+  storageBucket: "quora-clone-new-1249c.appspot.com",
+  messagingSenderId: "1016552429714",
+  appId: "1:1016552429714:web:a450da7859f6d756ca2e4b",
+  measurementId: "G-RTZKC30G0V",
 };
 
 // Initialize Firebase
