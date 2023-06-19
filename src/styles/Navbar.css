@@ -1,6 +1,6 @@
 .navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 1px;
     background-color: white;
@@ -9,6 +9,7 @@
     z-index: 10;
     top: 0;
     box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.5);
+    height: 10vh;
 }
 
  .qHeader_logo img{
@@ -19,12 +20,12 @@ margin-right: 20px;
 .qHeader_icons{
     display: flex;
     margin-right: 20px;
-    column-gap: 20px;
+    column-gap: 25px;
 }
 
 .qHeader_icon .MuiSvgIcon-root{
     color: gray;
-    font-size: xx-large;
+    font-size: 35px;
     padding: 5px;
 }
 .qHeader_icon .MuiSvgIcon-root:hover{
@@ -46,6 +47,7 @@ margin-right: 20px;
     outline: none;
     border: none;
     color: rgb(49,49,49);
+    margin-left: 10px;
 } 
 .qHeader_input .MuiSvgIcon-root{
    color: gray;
@@ -61,7 +63,7 @@ margin-right: 20px;
     cursor: pointer;
 }
 .qHeader_Rem .MuiSvgIcon-root{
-    font-size: xx-large;
+    font-size: 35px;
     color: gray;
     /* margin-left: 25px; */
 }

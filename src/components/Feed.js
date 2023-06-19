@@ -5,20 +5,35 @@ import Post from "./Post";
 import QuestionDataService from "../services/questionServices";
 import { deleteDoc, doc, collection, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
+import { useSearchParams } from "react-router-dom";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState("");
   const qref = collection(db, "questions");
   const Query = query(qref, orderBy("timestamp", "desc"));
   useEffect(() => {
     getData();
-  }, []);
+    console.log(searchParams.toString());
+    //console.log(searchParams.get("Search"));
+    let term = searchParams.get("Search");
+    setSearchTerm(term);
+  }, [searchParams]);
 
   const getData = async () => {
     const data = await QuestionDataService.getSortedQuestions(Query);
     console.log(data.docs);
+    data.docs.map((doc) => console.log(doc.data()));
 
-    setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    if (searchTerm) {
+      const filteredDocs = data.docs.filter((doc) =>
+        doc.data().question.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setPosts(filteredDocs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    } else {
+      setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    }
   };
   const handleDelete = async (idx) => {
     console.log("inside delete");
