@@ -4,7 +4,7 @@ import Feed from "./Feed";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Widget from "./Widget";
-import Footer from "./Footer";
+import Foot from "../Footer/Foot";
 
 const Quora = () => {
   return (
@@ -15,7 +15,7 @@ const Quora = () => {
         <Feed />
         <Widget />
       </div>
-      <Footer />
+      <Foot />
     </div>
   );
 };

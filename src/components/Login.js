@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/Login.css";
 import GoogleButton from "react-google-button";
 import COVER_IMAGE from "../Assets/Water.jpg";
 import { Link, useNavigate } from "react-router-dom";
@@ -135,8 +136,10 @@ const Login = () => {
             <div className="w-full flex items-center justify-center">
               <p className="text-sm font-normal text-[#060606]">
                 Don't have a account?{" "}
-                <span className="font-semibold underline underline-offset-2 cursor-pointer">
-                  <Link to="/signup">Sign up </Link>{" "}
+                <span className=" text-[black] font-semibold underline underline-offset-2 cursor-pointer">
+                  <Link to="/signup" className="signup">
+                    {"Sign up"}
+                  </Link>
                 </span>
               </p>
             </div>
