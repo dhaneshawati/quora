@@ -8,3 +8,13 @@
         flex: 0.9;
     }
 }
+@media screen and (min-width: 380px) and (max-width: 430px){
+    .feed{
+        flex: 0.9;
+    }
+}
+@media screen and (min-width: 431px) and (max-width: 768px){
+.feed{
+    margin-left: 50px;
+}
+}

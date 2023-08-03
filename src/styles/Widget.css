@@ -32,3 +32,9 @@
         display: none;
     }
 }
+@media screen and (min-width: 431px) and (max-width: 768px){
+.widget{
+    flex: 0.3;
+    max-height: 125vh;
+}
+}

@@ -137,3 +137,13 @@
     height: 30vh;
   }
 }
+@media screen and (min-width: 431px) and (max-width: 768px){
+.answer{
+  margin-left: 35px;
+  flex: 0.8;
+  margin-top: 10px;
+}
+.answer_body > textarea{
+  height: 40vh;
+}
+}

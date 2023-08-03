@@ -33,7 +33,7 @@ const Post = ({
   const [isEditable, setIsEditable] = useState(false);
   const user = useSelector((state) => state.userInfo.user);
   const [width, setWidth] = useState(window.innerWidth);
-  const breakPoint = 425;
+  const breakPoint = 768;
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(document.body.clientWidth);
@@ -166,7 +166,7 @@ const Post = ({
           })}
           <p></p>
         </div>
-        {image ? <img src={image} alt="post" /> : ""};
+        {image ? <img src={image} alt="post" /> : ""}
       </div>
       <div className="post_footer">
         <div className="post_footerAction">
