@@ -3,3 +3,8 @@
     flex-direction: column;
     flex: 0.6;
 } 
+@media screen and (max-width: 380px){
+    .feed{
+        flex: 0.9;
+    }
+}

@@ -1,0 +1,9 @@
+.userContainer{
+    background-color: rgb(241,241,241);
+    width: 100vw;
+} 
+.userContainer .userContainer_questions{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+} 

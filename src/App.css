@@ -5,3 +5,8 @@
 body{
   background-image: url("../src/Assets/quora-bg.png"); 
 }
+@media screen and (max-width: 375px){
+  .navbar{
+    width: fit-content;
+  }
+}

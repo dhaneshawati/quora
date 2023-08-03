@@ -13,6 +13,7 @@ const Feed = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const qref = collection(db, "questions");
   const Query = query(qref, orderBy("timestamp", "desc"));
+
   useEffect(() => {
     getData();
     console.log(searchParams.toString());

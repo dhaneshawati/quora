@@ -21,3 +21,8 @@
     color: rgb(80,80,80);
     font-size: 15px;
 }
+@media screen and (max-width: 380px){
+    .widget{
+        display: none;
+    }
+}

@@ -9,12 +9,12 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setQuestionInfo } from "../redux/actions/actionCreator";
 import QuestionDataService from "../services/questionServices";
 import { doc } from "firebase/firestore";
 import { db } from "../firebase";
-import { deleteDoc } from "firebase/firestore";
+import ModeEditOutlinedIcon from "@mui/icons-material/ModeEditOutlined";
 
 const Post = ({
   id,
@@ -30,16 +30,32 @@ const Post = ({
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [answers, setAnswers] = useState([]);
+  const [isEditable, setIsEditable] = useState(false);
+  const user = useSelector((state) => state.userInfo.user);
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakPoint = 425;
 
   useEffect(() => {
+    const handleWindowResize = () => setWidth(document.body.clientWidth);
+    window.addEventListener("resize", handleWindowResize);
     const docRef = doc(db, `questions/${id}`);
     getAnswers(docRef);
+    return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
   const getAnswers = async (ansRef) => {
     const data = await QuestionDataService.getAllAnswers(ansRef);
     //   console.log(data.docs);
     setAnswers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    data.docs.forEach((doc, i) => {
+      console.log("Answer edit Testing " + doc.data().user);
+      console.log("Answer edit Testing ID: " + doc.data().answerId);
+      console.log("Ans id: " + doc.id);
+      if (doc.data().user === user.email) {
+        setIsEditable(true);
+      }
+    });
+    console.log("Testing answer length: " + data.docs.length);
   };
 
   function handleUpvote(e) {
@@ -50,8 +66,8 @@ const Post = ({
     setDownvote(downvote + 1);
     e.target.style.color = "red";
   }
-  function handleAnswer() {
-    navigate("/home/answers");
+  function handleAnswer(isEditable, id, ans) {
+    navigate("/home/answers", { state: { isEditable, docId: id, ans } });
   }
   function handleQuestionDispatch() {
     console.log("Inside dispatch answer");
@@ -72,38 +88,78 @@ const Post = ({
   return (
     <div className="post" onClick={handleQuestionDispatch}>
       <div className="post_info">
-        <Avatar src={profileURL} />
-        <h5>{qAskedBy}</h5>
-
-        <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
-        <div className="right">
-          <MoreHorizOutlinedIcon />
-          <CloseOutlinedIcon
-            onClick={() => {
-              deletePost(id);
-            }}
+        {width <= breakPoint ? (
+          <Avatar
+            className="avatar"
+            src={profileURL}
+            sx={{ width: 24, height: 24 }}
           />
+        ) : (
+          <Avatar className="avatar_post" src={profileURL} />
+        )}
+        {width <= breakPoint ? (
+          <div className="qInfo">
+            <h5>{qAskedBy}</h5>
+
+            <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
+          </div>
+        ) : (
+          <>
+            <h5>{qAskedBy}</h5>
+
+            <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
+          </>
+        )}
+
+        <div className="right">
+          {qAskedBy === user.email && (
+            <CloseOutlinedIcon
+              onClick={() => {
+                deletePost(id);
+              }}
+            />
+          )}
         </div>
       </div>
       <div className="post_body">
         <div className="post_question">
           <p>{questionProp}</p>
-          <button className="post_btnAnswer" onClick={handleAnswer}>
-            Answer
-          </button>
+          {qAskedBy !== user.email && !isEditable && (
+            <button
+              className="post_btnAnswer"
+              onClick={() => {
+                handleAnswer(isEditable, id, "");
+              }}
+            >
+              Answer
+            </button>
+          )}
         </div>
         <div className="post_answer">
           {answers.map((doc, id) => {
             return (
               <div key={doc?.id} className="flex flex-col">
-                <p className="mb-4 text-justify">
-                  <span className="font-serif text-justify">{doc?.answer}</span>
-                  <span className="mr-4 font-medium ml-8">
-                    Answered by: {doc?.user}
+                <p className="mb-4 text-justify flex flex-col">
+                  <span className="font-serif text-justify">
+                    {id + 1} - {doc?.answer}
                   </span>
-                  <span className="font-medium">
-                    on - {new Date(doc.timestamp?.toDate()).toLocaleString()}
-                  </span>
+                  <p className="editInfo flex flex-row">
+                    <span className="mr-4 font-medium ml-8">
+                      Answered by: {doc?.user}
+                    </span>
+                    <span className="font-medium">
+                      on - {new Date(doc.timestamp?.toDate()).toLocaleString()}
+                    </span>
+                    <span className="edit">
+                      {isEditable && doc.user === user.email && (
+                        <ModeEditOutlinedIcon
+                          onClick={() => {
+                            handleAnswer(isEditable, doc.id, doc.answer);
+                          }}
+                        />
+                      )}
+                    </span>
+                  </p>
                 </p>
               </div>
             );

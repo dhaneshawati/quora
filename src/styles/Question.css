@@ -8,8 +8,10 @@
     border: 1px soild lightgray;
     border-radius: 5px;
     margin-left: 20px;
+    height: 70vh;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-.question_title {
+.question_title { 
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -125,4 +127,22 @@
 .question_btns .question_Addbtn:hover{
     background-color: rgb(58, 58, 247);
     cursor: pointer;
+}
+
+@media screen  and (max-width: 380px){
+  .question{
+    font-size: small;
+    flex: 0.8;
+    height: fit-content;
+  }
+  .question_title > h5{
+    font-size: small;
+  }
+  .question_info > .question_scope{
+    font-size: small;
+  }
+  .question_field > .input,.question_field > .question_fieldLink > .input{
+    font-size: x-small;
+  }
+ 
 }

@@ -1,4 +1,3 @@
-
 .post{ 
     display: flex;
     flex-direction: column;
@@ -8,14 +7,19 @@
     border-radius: 5px;
     margin-top: 10px;
 }
-/* .post:hover{
-    border: 1px solid gray;
+.post:hover{
+    /* border: 1px solid gray; */
     cursor: pointer;
-} */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
 .post_info{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
+/* .post_info .infoResponsive{
+    display: inline;
+} */
 .post_info small{
     font-weight: bold;
     margin-left: 20px;
@@ -69,6 +73,15 @@
     background-color: rgb(58, 58, 247);
     cursor: pointer;
 }
+.edit .MuiSvgIcon-root{
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: larger;
+ }
+ .edit .MuiSvgIcon-root:hover{
+    color: #8f1f1b;
+ }
 .post_footer{
     display: flex;
     align-items: center;
@@ -93,4 +106,36 @@
 }
 .post_footer .MuiSvgIcon-root:active{
     color: dodgerblue;
+}
+
+@media screen and (max-width: 380px) {
+    .post{
+        font-size: small;
+    }
+    /* .post_info{
+        justify-content: space-around;
+    } */
+    .post_info .qInfo{
+        margin-left: 2.5rem;
+        text-align: center;
+    }
+    .editInfo {
+        flex-direction: column;
+    }
+    .editInfo span{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .post_body .post_question{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+    }
+    .post_question .post_btnAnswer{
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 0;
+    }
+
 }
