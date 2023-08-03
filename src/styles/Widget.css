@@ -21,7 +21,13 @@
     color: rgb(80,80,80);
     font-size: 15px;
 }
+
 @media screen and (max-width: 380px){
+    .widget{
+        display: none;
+    }
+}
+@media screen and (min-width: 380px) and (max-width: 430px){
     .widget{
         display: none;
     }

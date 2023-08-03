@@ -186,3 +186,80 @@ margin-right: 20px;
             display: none;
         }
   }
+  @media screen and (min-width: 380px) and (max-width: 430px){
+    .navbar{
+        width: 100%;
+      padding: 2px;
+      justify-content: space-between;
+    }
+    .qHeader_logo img{
+        height: 10px;
+        margin-right: 10px;
+        }
+        .qHeader_icons{
+            display: flex;
+            margin-right: 10px;
+            column-gap: 15px;
+        }
+        
+        .qHeader_icon .MuiSvgIcon-root{
+            color: gray;
+            font-size: 20px;
+            padding: 3px;
+        }
+        .qHeader_Rem{
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            column-gap: 15px;
+            position: relative;
+        }
+        .qHeader_Rem .qHeader_avatar{
+            cursor: pointer;
+        }
+        .qHeader_Rem .MuiSvgIcon-root{
+            font-size: 20px;
+            color: gray;
+            /* margin-left: 25px; */
+        }
+        .qHeader_Rem .addBtn{
+            width: 10px;
+            height: 30px;
+            font-size: x-small;
+        }
+        .qHeader_input{
+            display: flex;
+            align-items: center;
+            border: 1px solid lightgray;
+            padding: 2px;
+            border-radius: 3px;
+            font-size: x-small;
+            /* border: 1px solid red;
+            /* width: fit-content;
+            height: fit-content; */
+        }
+        .qHeader_input .MuiSvgIcon-root{
+            font-size: x-small;
+        }
+        .qHeader_input .searchInput{
+            display: none;
+        }
+        .qHeader_input .visible{
+            display: block;
+        }
+        .qHeader_avatar .hidden{
+            display: none;
+        }
+        .qHeader_Rem .language{
+            display: none;
+        }
+        .qHeader_Rem .hidden{
+            display: none;
+        }
+        .navbar .hidden{
+            display: none;
+        }
+        .qHeader_icon .hidden{
+            display: none;
+        }
+}

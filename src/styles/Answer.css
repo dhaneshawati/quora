@@ -125,3 +125,15 @@
     height: 30vh;
   }
 }
+@media screen and (min-width: 380px) and (max-width: 430px){
+  .answer{
+    font-size: medium;
+    flex: 0.8;
+  }
+  .answer_title > h1, .answer_title > p, .answer_title > p > .name, .answer_body, .answer_body > textarea {
+    font-size: medium;
+  }
+  .answer_body > textarea{
+    height: 30vh;
+  }
+}

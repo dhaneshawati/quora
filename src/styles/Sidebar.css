@@ -2,7 +2,13 @@
     margin-right: 10px;
     flex: 0.2;
 }
+
 @media screen and (max-width: 380px){
+    .sidebar{
+        display: none;
+    }
+}
+@media screen and (min-width: 380px) and (max-width: 430px){
     .sidebar{
         display: none;
     }
