@@ -23,3 +23,21 @@
     color: gray;
     font-size: small;
 }
+
+@media screen and (min-width: 431px) and (max-width: 667px){
+    .widget__content{
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-bottom: 1px solid lightgray;
+        align-items: center;
+        justify-content: center;
+    }
+    .widget__content img{
+        height: 60px;
+        width: 50px;
+        border-radius: 3px;
+        font-size: small;
+    }
+}

@@ -57,10 +57,10 @@ const Login = () => {
   };
   return (
     <div className="contain">
-      <div className="w-[800px] h-[550px] m-auto">
-        <div className="absolute w-[800px] h-[550px] flex  m-auto">
-          <div className="relative w-1/2 h-full flex flex-col mt-8 ml-32 shadow">
-            <div className="absolute top-[20%] left-[10%] flex flex-col ">
+      <div className="w-[50rem] h-[34.375rem] m-auto">
+        <div className="parent absolute w-[50rem] h-[34.375rem] flex  m-auto">
+          <div className="leftDiv relative w-1/2 h-full flex flex-col mt-8 ml-32 shadow">
+            <div className="left_content absolute top-[20%] left-[10%] flex flex-col ">
               <img
                 className="h-[35%] w-[45%] ml-16"
                 src="https://download.logo.wine/logo/Quora/Quora-Logo.wine.png"
@@ -73,11 +73,11 @@ const Login = () => {
             <img
               src={COVER_IMAGE}
               alt="poster"
-              className="h-[550px] object-cover border-red rounded-md"
+              className="photo h-[550px] object-cover border-red rounded-md"
             />
           </div>
 
-          <div className="w-1/2 h-full  bg-[#f5f5f5] flex flex-col p-10 justify-between mt-8 rounded-md">
+          <div className="w-1/2 h-full  bg-[#f5f5f5] flex flex-col p-10 justify-between mt-8 rounded-md mr-[10%]">
             <p className="mb-4 text-[#FF0000]">{error}</p>
 
             <div className="w-full flex flex-col  mx-auto">

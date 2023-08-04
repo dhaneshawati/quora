@@ -81,7 +81,7 @@ const Question = () => {
         <div className="question_scope">
           <PeopleAltOutlined />
           <p>Public</p>
-          <ExpandMore />
+          {/* <ExpandMore /> */}
         </div>
       </div>
       <div className="question_field">

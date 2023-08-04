@@ -32,7 +32,7 @@ const Navbar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   let searchTerm = "Search";
   const [width, setWidth] = useState(window.innerWidth);
-  const breakPoint = 425;
+  const breakPoint = 460;
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(document.body.clientWidth);

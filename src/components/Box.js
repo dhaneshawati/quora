@@ -11,7 +11,7 @@ const Box = () => {
   );
   const user = useSelector((state) => state.userInfo.user);
   const [width, setWidth] = useState(window.innerWidth);
-  const breakPoint = 425;
+  const breakPoint = 460;
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(document.body.clientWidth);

@@ -8,6 +8,8 @@
     display: flex;
     padding: 5px;
     border-bottom: 1px solid lightgray;
+    align-items: center;
+        justify-content: center;
 }
 .side_content img{
     height: 40px;
@@ -17,4 +19,19 @@
     color: blue;
     text-decoration: underline;
    margin-left: 20px;
+}
+@media screen and (min-width: 431px) and (max-width: 768px){
+    .side_content{
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        border-bottom: 1px solid lightgray;
+    }
+    .side_content img{
+        height: 60px;
+        width: 50px;
+        border-radius: 3px;
+        font-size: small;
+    }
 }

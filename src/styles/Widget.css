@@ -27,12 +27,24 @@
         display: none;
     }
 }
-@media screen and (min-width: 380px) and (max-width: 430px){
+@media screen and (min-width: 380px) and (max-width: 460px){
     .widget{
         display: none;
     }
 }
-@media screen and (min-width: 431px) and (max-width: 768px){
+@media screen and (min-width: 461px) and (max-width: 607px){
+    .widget{
+        display: none;
+    }
+} 
+@media screen and (min-width: 608px) and (max-width: 667px){
+    .widget{
+        flex: 0.2;
+        /* width: 15rem; */
+        max-height: 170vh
+    }
+}
+@media screen and (min-width: 668px) and (max-width: 768px){
 .widget{
     flex: 0.3;
     max-height: 125vh;

@@ -125,7 +125,7 @@
     height: 30vh;
   }
 }
-@media screen and (min-width: 380px) and (max-width: 430px){
+@media screen and (min-width: 380px) and (max-width: 460px){
   .answer{
     font-size: medium;
     flex: 0.8;
@@ -137,13 +137,23 @@
     height: 30vh;
   }
 }
-@media screen and (min-width: 431px) and (max-width: 768px){
-.answer{
-  margin-left: 35px;
-  flex: 0.8;
-  margin-top: 10px;
+@media screen and (min-width: 461px) and (max-width: 607px){
+  .answer{
+    margin-left: 35px;
+    flex: 0.6;
+    margin-top: 10px;
+  }
+  .answer_body > textarea{
+    height: 40vh;
+  }
 }
-.answer_body > textarea{
-  height: 40vh;
-}
+@media screen and (min-width: 608px) and (max-width: 768px){
+  .answer{
+    margin-left: 35px;
+    flex: 0.8;
+    margin-top: 10px;
+  }
+  .answer_body > textarea{
+    height: 40vh;
+  }
 }
