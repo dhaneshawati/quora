@@ -8,6 +8,7 @@ import Qpage from "./components/Qpage";
 import AnsPage from "./components/AnsPage";
 import PageNotFound from "./components/PageNotFound";
 import UserQuestionContainer from "./components/UserQuestionContainer";
+import SpacesContainer from "./Spaces/SpacesContainer";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         />
         <Route path="/home/answers" exact element={<AnsPage />} />
         <Route path="/home/user_answers" exact element={<AnsPage />} />
+        <Route path="/home/Spaces" exact element={<SpacesContainer />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

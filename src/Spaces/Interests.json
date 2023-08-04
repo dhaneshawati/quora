@@ -1,0 +1,175 @@
+
+[
+    {
+        "name": "History",
+        "content" : [
+            {
+                "event": "Partition of India",
+                "year": "1947",
+                "description": "The Partition of India in 1947 was the change of political borders and the division of other assets that accompanied the dissolution of the British Raj in the Indian subcontinent and the creation of two independent dominions in South Asia: India and Pakistan.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/A_refugee_special_train_at_Ambala_Station_during_partition_of_India.jpg"
+            },
+            {
+                "event": "Kargil War",
+                "year": "1999",
+                "description": "The Kargil War, also known as the Kargil conflict, was fought between India and Pakistan from May to July 1999 in the Kargil district of Jammu and Kashmir and elsewhere along the Line of Control (LoC). In India, the conflict is also referred to as Operation Vijay, which was the codename of the Indian military operation in the region. The Indian Air Force acted jointly with the Indian Army to flush out the Pakistan Army and paramilitary troops from vacated Indian positions along the LoC.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Kargil_war.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Science",
+        "content" : [
+            {
+                "event": "Plastic surgery",
+                "year": "2000 BC",
+                "description": "Historians believe plastic surgery was being carried out in India as early as near 2000 BC. To clarify, plastic in this phrase doesn’t refer to the petroleum byproduct but to plastikē or the art of modelling - malleable flesh. Eventually, it was ancient Indian physician Sushruta who was credited with being the father of plastic surgery around 600 BC, whose books and teachings eventually made their way to Europe centuries later.",
+                "image": "https://im.indiatimes.in/media/content/2018/Jan/ancient_indian_plastic_surgery_1516940192.png"
+            },
+            {
+                "event": "Chandrayaan-1",
+                "year": "22 October 2008",
+                "description": "Chandrayaan-1, India's first mission to Moon, was launched successfully on October 22, 2008 from SDSC SHAR, Sriharikota. The spacecraft was orbiting around the Moon at a height of 100 km from the lunar surface for chemical, mineralogical and photo-geologic mapping of the Moon. The spacecraft carried 11 scientific instruments built in India, USA, UK, Germany, Sweden and Bulgaria.",
+                "image": "https://www.dqindia.com/wp-content/uploads/2016/12/Satellite-1.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Movies",
+        "content" : [
+                    {
+                        "event": "3 Idiots",
+                        "year": "2009",
+                        "description": "Two friends are searching for their long lost companion. They revisit their college days and recall the memories of their friend who inspired them to think differently, even as the rest of the world called them - idiots",
+                        "image": "https://www.koimoi.com/wp-content/new-galleries/2019/12/rajkumar-hiranis-3-idiots-a-story-based-on-the-education-system-that-changed-many-perceptions-completes-a-decade-0001.jpg"
+                    },
+                    {
+                        "event": "Rocketry: The Nambi Effect",
+                        "year": "2022",
+                        "description": "Based on the life of Indian Space Research Organization scientist Nambi Narayanan, who was framed for being a spy and arrested in 1994. Though free, he continues to fight for justice against the officials who falsely implicated him.",
+                        "image": "https://i0.wp.com/sszeemedia.com/wp-content/uploads/2022/06/maxresdefault-1.jpg?fit=1200%2C675&ssl=1"
+                    }
+                ]
+    },
+    {
+        "name": "Philosophy",
+        "content" : [
+                    {
+                        "event": "Christian philosophy",
+                        "year": "400 A.D.",
+                        "description": "St. Augustine writes his Confessions.Philosophy absorbed into Christian theology.",
+                        "image": "https://assets.sutori.com/user-uploads/image/0191dccd-2628-4194-881b-19b15ca142ea/21acce0b95d1d0f2d7b23296440815c4.jpeg"
+                    },
+                    {
+                        "event": "Philosophy for Laymen",
+                        "year": "1946",
+                        "description": "When Bertrand Russell publishes Philosophy for Laymen, reviving an ancient conception of philosophy as a way of life much like the Greeks? He helped develop analytic philosophy a insisted that questions of cosmic meaning and value have an existential, ethical and spiritual urgency.",
+                        "image": "https://assets.sutori.com/user-uploads/image/5196c6f6-8d0a-4bdb-b38e-7a073359f2fc/5946dd09a36060485078c46b6a4c0187.jpeg"
+                    }
+                ]
+    },
+    {
+        "name": "Technology",
+        "content" : [
+                    {
+                        "event": "The Telephone",
+                        "year": "1876",
+                        "description": "Just over thirty years after Morse sent the first telegraph, Alexander Graham Bell made the first phone call. His first words were: Mr. Watson, come here. I want to see you. (Mr. Watson was his assistant.) Eventually, invention of Mr. bell paved the way for making phone calls to people worldwide, not just in the next room. And now, of course, most of us carry a smartphone or cell phone every day.",
+                        "image": "https://www.lifewire.com/thmb/dhLveuicISNm-B7uIY6bkp9SELA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/old-time-message-157418221-64cf2457c36241799e1a69c6cbc27f66.jpg"
+                    },
+                    {
+                        "event": "The Light Bulb",
+                        "year": "1880",
+                        "description": "A few years later, Edison let there be light with the incandescent bulb. It is difficult to appreciate what an incredible invention this was — until you are dealing with a power outage and your only light source at night is candlelight. We can avoid ever being in the dark with smart light bulbs that you can turn on and off with a virtual assistant like Alexa or Google Assistant",
+                        "image": "https://www.lifewire.com/thmb/GqUJeSRC9-3AnhSRGBIaQTFsn_A=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/farmer-s-market-nakid-light-bulb-and-blurred-crowd-of-people-973596466-d897fc63f042430bb949766ff4b76cc5.jpg"
+                    }
+                ]
+    },
+    {
+        "name": "Books",
+        "content" : [
+                        {
+                            "event": "Anna Karenina",
+                            "year": "1878",
+                            "description": "Any fan of stories that involve juicy subjects like adultery, gambling, marriage plots, and, well, Russian feudalism, would instantly place Anna Karenina Written by Russian novelist Leo Tolstoy at the peak of their “greatest novels” list. And that is exactly the ranking that publications like Time magazine have given the novel since it was published in its entirety in 1878.",
+                            "image": "https://cdn.britannica.com/82/175382-050-8B76E4A8/Greta-Garbo-Anna-Karenina-Clarence-Brown.jpg?w=600&q=60"
+                        },
+                        {
+                            "event": "The Great Gatsby",
+                            "year": "1925",
+                            "description": "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.",
+                            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/220px-The_Great_Gatsby_Cover_1925_Retouched.jpg"
+                        }
+                ]
+    },
+    {
+        "name": "Business",
+        "content" : [
+                    {
+                        "event": "IT Business and Management conference",
+                        "year": "16 to 19 September 2019",
+                        "description": "At first glance, conferences based around a financial and database software package might not sound like a showstopper, even allowing for John Mayer closing the event with a concert in San Fran. But the speaker line-up includes an interesting mix of science and business thought leaders, and even ex-chiefs of the CIA and British Secret Intelligence Service. All areas of business are covered, with a focus on how to leverage digital technologies and the cloud for business success. ",
+                        "image": "https://static.theceomagazine.net/wp-content/uploads/2019/08/16101956/oracle-world.jpg"
+                    },
+                    {
+                        "event": "Financial services",
+                        "year": "23 to 26 September 2019",
+                        "description": "It started as a banking seminar in 1978 and 40 years later has become the worlds annual conference for the financial industry. The 2018 event was held in Sydney, while the 2019 conference will be held in London.",
+                        "image": "https://static.theceomagazine.net/wp-content/uploads/2019/08/16101553/sibos.jpg"
+                    }
+                ]
+    },
+    {
+        "name": "Cooking",
+        "content" : [
+                    {
+                        "event": "Shipra Khanna",
+                        "year": "2012",
+                        "description": "Shipra Khanna is an Indian celebrity chef, restaurateur, author and television personality. She is best known for, at the age of 29, winning the second season of the Indian television show MasterChef India (2012).",
+                        "image": "https://media.licdn.com/dms/image/C4D03AQE5iofq5OLD0w/profile-displayphoto-shrink_800_800/0/1642388582820?e=2147483647&v=beta&t=Dniuw4c382eWCpe6FjMLdGt4BCSZO77Q9Nnq4okzJYU"
+                    },
+                    {
+                        "event": "Nayanjyoti Saikia",
+                        "year": "2023",
+                        "description": "Nayanjyoti Saikia, a home cook from Assam, emerged as the winner of the seventh season of MasterChef India. The 13-week-long cooking show saw Saikia competing against two other finalists in the grand finale, where the contestants were tested in a signature three-course meal challenge.",
+                        "image": "https://www.hindustantimes.com/ht-img/img/2023/04/01/1600x900/winner_MasterChef_India_1680317759771_1680317782494_1680317782494.jpg"
+                    }
+                ]
+    },
+    {
+        "name": "Music",
+        "content" : [
+                    {
+                        "event": "Abhijeet Sawant",
+                        "year": "2005",
+                        "description": "e released his first album Aap Ka Abhijeet followed by his second album JUNOON . Both the albums were well-received by their fans. Abhijeet also tried his luck in the Bollywood industry with his film - Lottery which bombed at the Box Office. Abhijeet is currently planning to start his reality show but has no success yet.",
+                        "image": "https://en.janbharattimes.com/wp-content/uploads/2019/10/abhijeet-indian-idol.jpg"
+                    },
+                    {
+                        "event": "Sandeep Acharya",
+                        "year": "2006",
+                        "description": "The second season aired from November 2005 to April 2006. Sandeep Acharya bagged first place in the ‘Indian Idol 2’ along with a Rs 10 million contract with Sony BIG. Unfortunately, the actor lost his life to Jaundice in December 2013. He was 29 years old then.",
+                        "image": "https://en.janbharattimes.com/wp-content/uploads/2019/10/sandeep-indian-idol.jpg"
+                    }
+                ]
+    },
+    {
+        "name": "Education",
+        "content" : [
+                    {
+                        "event": "Savitribai Phule",
+                        "year": "1848",
+                        "description": "Savitribai Phule is considered to be the pioneer of India's feminist movement. Savitribai and Jyotiba together founded one of the early modern Indian girls' school in Pune, at Bhidewada in 1848. She strived to abolish discrimination and unfair treatment of people on the basis of caste and gender. She and her husband Mr. Jyotirao phule were pioneers of women's education in India. They started their first school for girls in 1848 in Pune at Tatyasaheb Bhide's residence or Bhidewada.",
+                        "image": "https://thelogicalindian.com/h-upload/2022/01/03/209612-untitled-design-6.jpg"
+                    },
+                    {
+                        "event": "Horace Mann",
+                        "year": "(1796 to 1859)",
+                        "description": "In the United States, Horace Mann (1796 to 1859) of Massachusetts used his political base and role as Secretary of the Massachusetts State Board of Education to promote public education in his home state and nationwide.",
+                        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Horace_Mann.jpg/180px-Horace_Mann.jpg"
+                    }
+                ]
+    }
+
+
+]
