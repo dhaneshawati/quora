@@ -7,8 +7,9 @@
     border-radius: 5px;
     margin-top: 2rem;
     align-items: center;
-    justify-content: center;
-    row-gap: 2rem;
+    justify-content: space-between;
+    row-gap: 1.5rem;
+    flex: 1;
 }
 .spaces:hover{
     /* border: 1px solid gray; */
@@ -45,7 +46,7 @@
     border-radius: 6px;
 }
 .image img:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 380px) {

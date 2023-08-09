@@ -15,9 +15,11 @@ function SpacesContainer() {
       <Navbar />
       <div className="content">
         <h1 className="heading">{spaceResponse.name}</h1>
-        {spaceResponse.content.map((interestPage, index) => (
-          <Spaces space={interestPage} key={index} />
-        ))}
+        <div className="space">
+          {spaceResponse.content.map((interestPage, index) => (
+            <Spaces space={interestPage} key={index} />
+          ))}
+        </div>
       </div>
     </div>
   );

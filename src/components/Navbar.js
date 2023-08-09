@@ -25,6 +25,7 @@ const Navbar = () => {
   const [input, setInput] = useState("");
   const [languageOpen, setLanguageOpen] = useState(false);
   const [inputVisibility, setInputVisibility] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const auth = getAuth();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userInfo.user);
@@ -146,23 +147,40 @@ const Navbar = () => {
               className={inputVisibility ? "avatar hidden" : "avatar"}
               src={photoURL}
               sx={{ width: 24, height: 24 }}
+              onClick={() => setProfileOpen(!profileOpen)}
             />
           ) : (
-            <Avatar className="avatar" src={photoURL} />
+            <Avatar
+              className="avatar"
+              src={photoURL}
+              onClick={() => setProfileOpen(!profileOpen)}
+            />
           )}
         </div>
+        {profileOpen && !inputVisibility && (
+          <div className="profile">
+            <Avatar
+              className={inputVisibility ? "avatar hidden" : "avatar"}
+              src={photoURL}
+              sx={{ width: 24, height: 24 }}
+            />
+            <div>{user.email}</div>
+          </div>
+        )}
         <LanguageIcon
           className="language"
           onClick={() => setLanguageOpen(!languageOpen)}
         />
-        {languageOpen && <div className="languageDiv">English</div>}
+        {languageOpen && !inputVisibility && (
+          <div className="languageDiv">English</div>
+        )}
         <Button
           className={inputVisibility ? "addBtn hidden" : "addBtn"}
           onClick={handleQuestion}
         >
           Add Question
         </Button>
-        <div>
+        <div className="powdiv">
           <div className="qHeader_icon">
             <PowerSettingsNewOutlinedIcon
               className={inputVisibility ? "power hidden" : "power"}

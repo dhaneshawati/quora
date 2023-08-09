@@ -16,3 +16,8 @@
     font-size: larger;
     font-weight: 800;
 }
+.SpacesContainer .content .space{
+    display: flex;
+    column-gap: 1rem;
+    /* flex-wrap: wrap; */
+}

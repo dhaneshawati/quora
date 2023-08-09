@@ -122,9 +122,10 @@
     .editInfo {
         flex-direction: column;
     }
-    .editInfo span{
+    .editInfo span{ 
         margin-left: 0;
         margin-right: 0;
+        text-align: center;
     }
     .post_body .post_question{
         flex-direction: column;
