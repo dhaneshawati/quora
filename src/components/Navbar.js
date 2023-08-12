@@ -112,7 +112,13 @@ const Navbar = () => {
         </div> */}
       </div>
       {width <= breakPoint ? (
-        <div className="qHeader_input">
+        <div
+          className="qHeader_input"
+          onClick={() => {
+            setLanguageOpen(false);
+            setProfileOpen(false);
+          }}
+        >
           <SearchIcon
             onClick={() => {
               setInputVisibility(!inputVisibility);
@@ -128,7 +134,13 @@ const Navbar = () => {
           />
         </div>
       ) : (
-        <div className="qHeader_input">
+        <div
+          className="qHeader_input"
+          onClick={() => {
+            setLanguageOpen(false);
+            setProfileOpen(false);
+          }}
+        >
           <SearchIcon />
           <input
             type="text"
@@ -147,13 +159,19 @@ const Navbar = () => {
               className={inputVisibility ? "avatar hidden" : "avatar"}
               src={photoURL}
               sx={{ width: 24, height: 24 }}
-              onClick={() => setProfileOpen(!profileOpen)}
+              onClick={() => {
+                setProfileOpen(!profileOpen);
+                setLanguageOpen(false);
+              }}
             />
           ) : (
             <Avatar
               className="avatar"
               src={photoURL}
-              onClick={() => setProfileOpen(!profileOpen)}
+              onClick={() => {
+                setProfileOpen(!profileOpen);
+                setLanguageOpen(false);
+              }}
             />
           )}
         </div>
@@ -169,7 +187,10 @@ const Navbar = () => {
         )}
         <LanguageIcon
           className="language"
-          onClick={() => setLanguageOpen(!languageOpen)}
+          onClick={() => {
+            setLanguageOpen(!languageOpen);
+            setProfileOpen(false);
+          }}
         />
         {languageOpen && !inputVisibility && (
           <div className="languageDiv">English</div>

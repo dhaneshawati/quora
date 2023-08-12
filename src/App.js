@@ -32,7 +32,7 @@ function App() {
         />
         <Route path="/home/answers" exact element={<AnsPage />} />
         <Route path="/home/user_answers" exact element={<AnsPage />} />
-        <Route path="/home/Spaces" exact element={<SpacesContainer />} />
+        <Route path="/home/Spaces/:space" exact element={<SpacesContainer />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

@@ -7,7 +7,43 @@ import { useNavigate } from "react-router-dom";
 const SidebarOptions = () => {
   const navigate = useNavigate();
   const handleClick = (idx) => {
-    navigate("/home/Spaces", { state: { index: idx } });
+    let page = "";
+    switch (idx) {
+      case 0:
+        page = "History";
+        break;
+      case 1:
+        page = "Science";
+        break;
+      case 2:
+        page = "Movies";
+        break;
+      case 3:
+        page = "Philosophy";
+        break;
+      case 4:
+        page = "Technology";
+        break;
+      case 5:
+        page = "Books";
+        break;
+      case 6:
+        page = "Business";
+        break;
+      case 7:
+        page = "Cooking";
+        break;
+      case 8:
+        page = "Music";
+        break;
+      case 9:
+        page = "Education";
+        break;
+      default:
+        page = "";
+        break;
+    }
+    navigate(`/home/Spaces/${page}`, { state: { index: idx } });
   };
 
   return (
