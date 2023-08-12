@@ -35,6 +35,7 @@ const Login = () => {
 
   useEffect(() => {
     if (currentUser) {
+      console.log(currentUser);
       dispatch(setUser(currentUser));
       navigate("/home");
     }

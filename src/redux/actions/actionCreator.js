@@ -1,5 +1,5 @@
 import { NEWLOGIN, LOGOUT, QUESTION, RESET } from "../actions/actionType";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase";
 
 function setUser(userval) {
@@ -18,8 +18,13 @@ function resetQuestion() {
     type: RESET,
   };
 }
-function signUp(email, password) {
-  return createUserWithEmailAndPassword(auth, email, password);
+async function signUp(name, email, password) {
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(auth.currentUser, { displayName: name });
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 function setQuestionInfo(info) {

@@ -34,7 +34,7 @@ const Box = () => {
         ) : (
           <Avatar className="avatar_box" src={photoURL} />
         )}
-        <h5>{user.email}</h5>
+        <h5>{user.displayName ? user.displayName : user.email}</h5>
       </div>
       <div className="quoraBox_quora">
         <p>What do you want to ask or share?</p>

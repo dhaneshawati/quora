@@ -60,6 +60,7 @@ const Answer = ({ isEditable, docId, ans }) => {
         user: user.email,
         answerId: questionId,
         timestamp: serverTimestamp(),
+        userDisplayName: user.displayName,
       });
       setAnswer("");
       navigate("/home");

@@ -23,6 +23,7 @@ const Post = ({
   timestamp,
   qAskedBy,
   profileURL,
+  userDisplayName,
   deletePost,
 }) => {
   const [upvote, setUpvote] = useState(100);
@@ -39,6 +40,7 @@ const Post = ({
     const handleWindowResize = () => setWidth(document.body.clientWidth);
     window.addEventListener("resize", handleWindowResize);
     const docRef = doc(db, `questions/${id}`);
+    console.log(qAskedBy);
     getAnswers(docRef);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
@@ -76,7 +78,7 @@ const Post = ({
         questionId: id,
         questionName: questionProp,
         timestamp: timestamp,
-        qSeeker: qAskedBy,
+        qSeeker: userDisplayName ? userDisplayName : qAskedBy,
       })
     );
   }
@@ -99,13 +101,13 @@ const Post = ({
         )}
         {width <= breakPoint ? (
           <div className="qInfo">
-            <h5>{qAskedBy}</h5>
+            <h5>{userDisplayName ? userDisplayName : qAskedBy}</h5>
 
             <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
           </div>
         ) : (
           <>
-            <h5>{qAskedBy}</h5>
+            <h5>{userDisplayName ? userDisplayName : qAskedBy}</h5>
 
             <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
           </>
@@ -145,7 +147,8 @@ const Post = ({
                   </span>
                   <p className="editInfo flex flex-row">
                     <span className="mr-4 font-medium ml-8">
-                      Answered by: {doc?.user}
+                      Answered by:{" "}
+                      {doc.userDisplayName ? doc.userDisplayName : doc.user}
                     </span>
                     <span className="font-medium">
                       on - {new Date(doc.timestamp?.toDate()).toLocaleString()}

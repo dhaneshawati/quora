@@ -17,12 +17,19 @@ const SignUp = () => {
   }, []);
 
   const handleSubmit = async () => {
-    setError("");
-    try {
-      await signUp(email, password);
-      navigate("/");
-    } catch (err) {
-      setError(err.message);
+    if (displayName === "") {
+      setError("Display name can not be empty");
+    } else if (email === "") {
+      setError("Email can not be empty");
+    } else if (password === "") {
+      setError("Password can not be empty");
+    } else {
+      try {
+        await signUp(displayName, email, password);
+        navigate("/");
+      } catch (err) {
+        setError(err.message);
+      }
     }
   };
 

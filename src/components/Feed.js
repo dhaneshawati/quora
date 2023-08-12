@@ -55,6 +55,7 @@ const Feed = () => {
             timestamp={doc.timestamp}
             qAskedBy={doc.user}
             profileURL={doc.profileURL}
+            userDisplayName={doc.userDisplayName}
             deletePost={handleDelete}
           />
         );

@@ -49,6 +49,7 @@ const Question = () => {
           timestamp: serverTimestamp(),
           user: user.email,
           profileURL: photoURL,
+          userDisplayName: user.displayName,
         });
 
         setQuestion("");
