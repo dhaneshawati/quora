@@ -9,6 +9,7 @@ import AnsPage from "./components/AnsPage";
 import PageNotFound from "./components/PageNotFound";
 import UserQuestionContainer from "./components/UserQuestionContainer";
 import SpacesContainer from "./Spaces/SpacesContainer";
+import SidePanel from "./SidePanel/SidePanel";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           element={<UserQuestionContainer />}
         />
         <Route path="/home/answers" exact element={<AnsPage />} />
+        <Route path="/home/testing" exact element={<SidePanel />} />
         <Route path="/home/user_answers" exact element={<AnsPage />} />
         <Route path="/home/Spaces/:space" exact element={<SpacesContainer />} />
         <Route path="*" element={<PageNotFound />} />

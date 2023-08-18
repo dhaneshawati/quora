@@ -107,6 +107,12 @@
 .post_footer .MuiSvgIcon-root:active{
     color: dodgerblue;
 }
+.post_footerAction .upvote{
+    color: dodgerblue;
+}
+.post_footerAction .downvote{
+    color: red;
+}
 
 @media screen and (max-width: 380px) {
     .post{

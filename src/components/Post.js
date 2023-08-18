@@ -173,9 +173,12 @@ const Post = ({
       </div>
       <div className="post_footer">
         <div className="post_footerAction">
-          <ArrowUpwardOutlinedIcon onClick={handleUpvote} />
+          <ArrowUpwardOutlinedIcon className="upvote" onClick={handleUpvote} />
           <p>{upvote}</p>
-          <ArrowDownwardOutlinedIcon onClick={handleDownvote} />
+          <ArrowDownwardOutlinedIcon
+            className="downvote"
+            onClick={handleDownvote}
+          />
           <p>{downvote}</p>
         </div>
         <RepeatOutlinedIcon />
